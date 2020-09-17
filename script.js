@@ -11,7 +11,7 @@ var hr = [];
 // console.log(parseInt(hr))
 
 // 1. Display current time with Moment.js
-$("#currentDay").append(moment().format("dddd, MMMM Do h:mm:ss a"));
+$("#currentDay").append(moment().format("dddd, MMMM Do h:mm a"));
 
 // 2. Click event to save text area content to local storage
 function saveSchedule() {
@@ -36,20 +36,32 @@ function displaySchedule() {
         // console.log(moment().hour());
 }
 
-// function timeCheck() {
+function timeCheck() {
 
-//         if (hr.value === (moment().hour())) {
+        if (hr.value === (moment().hour())) {
+                // use class of present
+        }.setAttribute(style.displayred)
 
-//         }.setAttribute(style.displayred)
+        if else (hr.value < (moment().hour()))
+        {
+                // use class of future
+        }.setAttribute(style.displaygreen)
 
-//         if else (hr.value < (moment().hour()))
-//         {
+        else (hr.value > (moment().hour()))
+        {
+                // use class of past
+        }.setAttribute(style.displaygrey)
 
-//         }.setAttribute(style.displaygreen)
+} $
 
-//         else (hr.value > (moment().hour()))
-//         {
+if (hr.value < currentHour) {
+        element.addClass("future")
 
-//         }.setAttribute(style.displaygrey)
+}
+else if (hr.value === currentHour) {
+        element.addClass("present")
 
-// }
+}
+else {
+        element.addClass("past")
+}
