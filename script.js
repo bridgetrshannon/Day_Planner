@@ -1,8 +1,6 @@
 // ~*~ Global Variables ~*~
 
-var currentHour;
-
-console.log(moment().hour());
+var currentHour = (moment().hour());
 
 var hr = [];
 
@@ -38,30 +36,15 @@ function displaySchedule() {
 
 function timeCheck() {
 
-        if (hr.value === (moment().hour())) {
-                // use class of present
-        }.setAttribute(style.displayred)
+        if (hr.value < currentHour) {
+                element.addClass("future")
 
-        if else (hr.value < (moment().hour()))
-        {
-                // use class of future
-        }.setAttribute(style.displaygreen)
+        }
+        else if (hr.value === currentHour) {
+                element.addClass("present")
 
-        else (hr.value > (moment().hour()))
-        {
-                // use class of past
-        }.setAttribute(style.displaygrey)
-
-} $
-
-if (hr.value < currentHour) {
-        element.addClass("future")
-
-}
-else if (hr.value === currentHour) {
-        element.addClass("present")
-
-}
-else {
-        element.addClass("past")
+        }
+        else {
+                element.addClass("past")
+        }
 }
