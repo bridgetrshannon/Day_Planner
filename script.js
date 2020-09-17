@@ -1,22 +1,55 @@
+// ~*~ Global Variables ~*~
+
+var currentHour;
+
+console.log(moment().hour());
+
+var hr = [];
+
+// Only shows 9 in the console
+// var hr = $(".hr").text()
+// console.log(parseInt(hr))
+
 // 1. Display current time with Moment.js
-// date and time logged to the console, not on the page though
-// console.log(moment().format("dddd, MMMM Do"));
-// hook to a div in html
-$("#currentDay").append(moment().format("dddd, MMMM Do h:mm:ss a"))
+$("#currentDay").append(moment().format("dddd, MMMM Do h:mm:ss a"));
 
 // 2. Click event to save text area content to local storage
-// ^^^^ function
-// localstorage.setItem
+function saveSchedule() {
+        // localstorage.setItem
+        // event.on("click", save)
+}
 
 // 3. When app opens, display content for each time block from local storage.
 // can be done with a loop (better) or by targeting each set block separately
 // localstorage.getItem 
 
-// 4. Change time block background color depending in the current hour (past = grey , present = red, future = green)
-console.log(moment().hour());
-// use this to create an if else statement if at certain time then this styling happens, if past or future then styling happens
+// array that holds the hour times from 9 am - 5 pm
+var hourArr = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
-// create rows that have 3 columns (bootstrap)
-        //  2 for time 8 for task 2 for save button
-        // Use classes and ids in the css sheet - already set for us 
-// 8 hours 9 am - 5 pm, 
+function displaySchedule() {
+
+        for (let i = 0; i < hourArr.length; i++)
+                console.log(hourArr[i]);
+
+        // 4. Change time block background color depending in the current hour (past = grey , present = red, future = green)
+
+        // console.log(moment().hour());
+}
+
+// function timeCheck() {
+
+//         if (hr.value === (moment().hour())) {
+
+//         }.setAttribute(style.displayred)
+
+//         if else (hr.value < (moment().hour()))
+//         {
+
+//         }.setAttribute(style.displaygreen)
+
+//         else (hr.value > (moment().hour()))
+//         {
+
+//         }.setAttribute(style.displaygrey)
+
+// }
