@@ -4,6 +4,8 @@ var currentHour = (moment().hour());
 
 var hr = [];
 
+var blockHour;
+
 // Only shows 9 in the console
 // var hr = $(".hr").text()
 // console.log(parseInt(hr))
@@ -13,7 +15,7 @@ $("#currentDay").append(moment().format("dddd, MMMM Do h:mm a"));
 
 // 2. Click event to save text area content to local storage
 function saveSchedule() {
-        // localstorage.setItem
+        localstorage.setItem
         // event.on("click", save)
 }
 
@@ -22,29 +24,48 @@ function saveSchedule() {
 // localstorage.getItem 
 
 // array that holds the hour times from 9 am - 5 pm
-var hourArr = [9, 10, 11, 12, 13, 14, 15, 16, 17];
+var blockHour = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 function displaySchedule() {
 
-        for (let i = 0; i < hourArr.length; i++)
-                console.log(hourArr[i]);
-
-        // 4. Change time block background color depending in the current hour (past = grey , present = red, future = green)
-
-        // console.log(moment().hour());
+        for (let i = 0; i < blockHour.length; i++)
+                console.log(blockHour[i]);
 }
+displaySchedule();
+
+// 4. Change time block background color depending in the current hour (past = grey , present = red, future = green)
+
+// console.log(moment().hour());
 
 function timeCheck() {
+        $(".hour").each(function () {
+                var blockHour = parseInt($(this).attr("id"))
 
-        if (hr.value < currentHour) {
-                element.addClass("future")
+                console.log(blockHour)
+                // check if we've moved past this time
+                if (blockHour < currentHour) {
+                        $(this).addClass("past");
+                }
+                else if (blockHour === currentHour) {
+                        $(this).removeClass("past");
+                        $(this).addClass("present");
 
-        }
-        else if (hr.value === currentHour) {
-                element.addClass("present")
-
-        }
-        else {
-                element.addClass("past")
-        }
+                }
+                else {
+                        $(this).removeClass("past");
+                        $(this).removeClass("present");
+                        $(this).addClass("future");
+                }
+        });
 }
+timeCheck();
+
+
+// // Need help with this 
+// var blockHour = {
+//         x: y,
+//         function() {
+//                 console.log(this.x)
+
+//         }
+// };
