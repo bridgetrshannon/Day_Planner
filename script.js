@@ -17,10 +17,10 @@ $(".saveBtn").on("click", saveSchedule)
 function saveSchedule() {
 
         const $button = $(this);
-        const time = $button.val();
-        const text = $button.siblings("textarea").val();
+        const hour = $button.val();
+        const scheduleInput = $button.siblings("textarea").val();
 
-        localStorage.setItem(time, text);
+        localStorage.setItem(hour, scheduleInput);
 
         // use jquery to grab text from previous sibling / element var timeText = $(this).val(); (not val though, something else)
 }
@@ -30,11 +30,8 @@ function saveSchedule() {
 
 function displaySchedule() {
 
-        // for (let i = 0; i < hourArr.length; i++)
-        //         console.log(hourArr[i]);
-
-        // localStorage.getItem(time, text);
-        // append
+        var nine_am = localStorage.getItem("9am");
+        $('#9').val(nine_am);
 }
 displaySchedule();
 
