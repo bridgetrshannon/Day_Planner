@@ -28,6 +28,13 @@ function saveSchedule() {
         // localStorage.getItem("hr9")
         // console.log(localStorage.getItem("hr9"))
 
+        const $button = $(this);
+        const time = $button.val();
+        const text = $button.siblings("textarea").val();
+
+        // localStorage.setItem(time, "textarea")
+
+        localStorage.setItem(time, text);
         // use jquery to grab text from previous sibling / element var timeText = $(this).val(); (not val though, something else)
 }
 
