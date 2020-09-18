@@ -15,13 +15,26 @@ $("#currentDay").append(moment().format("dddd, MMMM Do h:mm a"));
 
 // 2. Click event to save text area content to local storage
 
+$(".saveBtn").on("click", saveSchedule)
+
 function saveSchedule() {
+        console.log("buttonpress")
+        // inside function
+        // use jquery to get button value 
+        var timeText = $(this).val();
+        localStorage.setItem(timeText, "text")
 
-        // localstorage.setItem
-        // event.on("click", save)
-        // saveBtn 
+        //      example
+        // localStorage.getItem("hr9")
+        // console.log(localStorage.getItem("hr9"))
 
+        // use jquery to grab text from previous sibling / element var timeText = $(this).val(); (not val though, something else)
 }
+
+// happens outside of function 
+// localStorage.getItem("")
+// then put on the page - hook an element using jquery 
+
 
 // 3. When app opens, display content for each time block from local storage.
 // can be done with a loop (better) or by targeting each set block separately
