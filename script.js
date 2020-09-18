@@ -6,23 +6,19 @@ var hr = [];
 
 var blockHour;
 
-// Only shows 9 in the console
-// var hr = $(".hr").text()
-// console.log(parseInt(hr))
+var scheduleInput;
 
 // 1. Display current time with Moment.js
 $("#currentDay").append(moment().format("dddd, MMMM Do h:mm a"));
 
 // 2. Click event to save text area content to local storage
-
 $(".saveBtn").on("click", saveSchedule)
 
 function saveSchedule() {
-        console.log("buttonpress")
-        // inside function
-        // use jquery to get button value 
-        var timeText = $(this).val();
-        localStorage.setItem(timeText, "text")
+        // // inside function
+        // use jquery to get button value
+        // var timeText = $(this).val();
+        // localStorage.setItem(timeText, "text")
 
         //      example
         // localStorage.getItem("hr9")
@@ -55,8 +51,14 @@ function displaySchedule() {
         for (let i = 0; i < hourArr.length; i++)
                 console.log(hourArr[i]);
 
+
+        // var scheduleInput = document.getElementById("")
 }
 displaySchedule();
+
+// IDK What this is 
+//         localStorage.setItem( 'car', JSON.stringify(car) );
+// console.log( JSON.parse( localStorage.getItem( 'car' ) ) );
 
 // 4. Change time block background color depending in the current hour (past = grey , present = red, future = green)
 
