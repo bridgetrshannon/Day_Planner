@@ -1,9 +1,16 @@
 # Day_Planner
 
+## Description
 A simple calendar application that allows the user to save events for each hour of the day. This app runs in the browser and features dynamically updated HTML and CSS powered by jQuery.
+ #### Github Repository: https://github.com/bridgetrshannon/Work_Day_Scheduler 
+#### Github Page: https://bridgetrshannon.github.io/Work_Day_Scheduler/
 
-When the user enters an event or task, they can save it with the save button; this saves it to local storage so it will remain in the app when the page is reloaded. 
+## Features
+- User can enter an event or task
+- Save it with the save button
+- When page is reloaded, their events or tasks are still displayed
+- Users can clear local storage to remove entries the work day scheduler if desired.
+ ![Local storage for the Work Day Scheduler](localstorage.png)
+- The hour blocks change color based on what time it is. Hours that have passed are in grey, the current hour is in red, and future hours are green.
+ ![Completed Work Day Scheduler](workdayscheduler.png)
 
-The user can use the inspect tool and clear local storage to remove any entries that are in local storage, ultimately clearing the day planner.
-
-Screenshots are included of the planner filled out with and without the local storage view.
